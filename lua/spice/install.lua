@@ -56,7 +56,7 @@ function spice._install_plugin(repo, state, pkgs, p)
     end
 
     state.metadata[p.name] = p
-    table.insert(state.pkgs, { src = p.url })
+    table.insert(state.pkgs, { src = p.url, version = p.version })
     p.flags.listed = true
 end
 

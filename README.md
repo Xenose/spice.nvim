@@ -1,16 +1,21 @@
 # Spice: A NeoVim Plugin Loader
-
+Spice is designed to be a minimal wrapper on-top of vim.pack.add
+with dependencies and some metadata built in.
 
 ## Getting started
 ```lua
-vim.pack.install({ src = "https://github.com/Xenose/spice.nvim")
+-- you might need to delete your ~/.config/nvim/nvim-pack-lock.json
+-- to allow spice to install.
+vim.pack.install({{ src = "https://github.com/Xenose/spice.nvim" }})
 
-local spice = require("spice.spice")
+local spice = require("spice")
 local repo  = require("spice.repo")
 
 local pkgs = {
     oil = repo.pkgs.oil,
 }
+
+pkgs.oil.version = version = vim.version.range("2.x")
 
 spice.install(state, pkgs)
 local loaded = spice.load(state)
