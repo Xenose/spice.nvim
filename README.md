@@ -11,11 +11,12 @@ vim.pack.install({{ src = "https://github.com/Xenose/spice.nvim" }})
 local spice = require("spice")
 local repo  = require("spice.repo")
 
+local state = spice.init()
 local pkgs = {
     oil = repo.pkgs.oil,
 }
 
-pkgs.oil.version = version = vim.version.range("2.x")
+pkgs.oil.version = vim.version.range("2.x")
 
 spice.install(state, pkgs)
 local loaded = spice.load(state)
