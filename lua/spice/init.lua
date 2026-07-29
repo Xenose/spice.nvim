@@ -3,11 +3,15 @@ local spice = {
     load    = require("spice.loader").load,
 }
 
+_SPICE_STATE = {}
+
 function spice.init()
-    return {
+    _SPICE_STATE = {
         metadata = {},
         pkgs = {},
     }
+
+    return _SPICE_STATE
 end
 
 return spice

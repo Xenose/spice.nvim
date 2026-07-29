@@ -72,7 +72,7 @@ function spice.load(state)
         end
     end
 
-    vim.notify("Spice is fully loaded", vim.log.levels.INFO) 
+    vim.notify("Spice is fully loaded!", vim.log.levels.INFO) 
     return loaded
 end
 
