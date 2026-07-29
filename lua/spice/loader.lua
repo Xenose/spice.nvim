@@ -38,7 +38,7 @@ function spice._load_plugin(state, loaded, i)
         for _, si in pairs(i.deps) do
             if spice._load_plugin(state, loaded, state.metadata[si]) then
                 vim.print(si)
-                i.flags = false
+                i.flags[si] = false
                 return
             end
         end
