@@ -130,6 +130,19 @@ return {
             name    = "ruff",
             type    = "lsp",
             url     = "https://github.com/astral-sh/ruff-lsp",
-        }
+        },
+
+        pyright = {
+            name    = "pyright",
+            type    = "lsp",
+            url     = "https://github.com/microsoft/pyright",
+        },
+
+        dap_python = {
+            name    = "dap_python",
+            type    = "plugin",
+            url     = "https://github.com/mfussenegger/nvim-dap-python",
+            deps    = { "plenary" },
+        },
     }
 }
