@@ -5,7 +5,8 @@ with dependencies and some metadata built in.
 ## Getting started
 ```lua
 -- you might need to delete your ~/.config/nvim/nvim-pack-lock.json
--- to allow spice to install.
+-- as if you changed your config from vim.pack to spice without installing
+-- spice it might not install on startup
 vim.pack.install({{ src = "https://github.com/Xenose/spice.nvim" }})
 
 local spice = require("spice")
@@ -13,9 +14,13 @@ local repo  = require("spice.repo")
 
 local state = spice.init()
 local pkgs = {
-    oil = repo.pkgs.oil,
+    -- Spice should be declared at the top.
+    spice   = repo.pkgs.spice,
 
-    -- Manual definition 
+    -- Using spice's repo file
+    oil     = repo.pkgs.oil,
+
+    -- Manual definition example
     oil = {
         -- The name is used for updates
         name    = "oil",
@@ -42,6 +47,7 @@ end
 ```
 
 ## Commands
-| command           | description                     |
-| ----------------- | ------------------------------- |
-| SpiceUpdate       | Updates the plugins one by one. |
+| command           | Status  | description                        |
+| ----------------- | ------- | ---------------------------------- |
+| SpiceUpdate       | Added   | Updates the plugins one by one.    |
+| SpiceUpdateAll    | Planned | Updates all the plugins in one go. |

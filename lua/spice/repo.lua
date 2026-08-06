@@ -1,5 +1,11 @@
 return {
     pkgs = {
+        spice       = {
+            name    = "spice",
+            type    = "plugin",
+            url     = "https://github.com/Xenose/spice.nvim",
+        },
+
         -- deps
         
         mini_icons = {
