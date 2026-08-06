@@ -125,5 +125,11 @@ return {
             url     = "https://github.com/clangd/clangd",
             -- script  = "clangd",
         },
+
+        ruff = {
+            name    = "ruff",
+            type    = "lsp",
+            url     = "https://github.com/astral-sh/ruff-lsp",
+        }
     }
 }
